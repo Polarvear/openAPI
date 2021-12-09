@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1> Open API 연습입니다. </h1>
+
+
+
+<body>
+
+<script>
+loadData('https://cors-anywhere.herokuapp.com/http://apis.data.go.kr/B552584/UlfptcaAlarmInqireSvc/getUlfptcaAlarmInfo?serviceKey=Fs0FMSahbQEYkW4qd0bKDnX6ualVgtwD6luFAYuMaOG8c4P%2B%2Bhsjn%2BMh2qNQZoG9AFPrTvZFq%2FJ013lo8dUBWA%3D%3D&returnType=json&numOfRows=100&pageNo=1&year=2020&itemCode=PM10')
+  //json데이터를 fetch를 사용해서 읽을 수 있도록 변환해줌 배열 형태로 출력
+
+  function loadData(serverInfo) {
+    console.log("loadData: " + serverInfo)
+    fetch(serverInfo)
+            .then(response => response.json())
+            .then(data => {
+              console.log('data : ', data) //데이터 추출 확인
+            })
+  }
+</script>
+
+</body>
+</html>
